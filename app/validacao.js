@@ -1,4 +1,18 @@
 function verificaSeOChutePossuiValorValido(chute) {
+    if (chute == "game over") {
+        console.log("caiu no if");
+        
+        document.body.classList.add("game-over");
+
+        document.body.innerHTML = `
+        <h2>Game Over!</h2>
+        <h3>Você encerrou o jogo</h3>
+
+        <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>
+        `
+        recognition.addEventListener('end', () => recognition.stop());
+        return
+    } 
     const numero = +chute;
 
     if (ChuteForInvalido(numero)) {
@@ -12,6 +26,7 @@ function verificaSeOChutePossuiValorValido(chute) {
     }
 
     if (numero === numeroSecreto) {
+        
         document.body.innerHTML = `
         <h2>Você acertou!</h2>
         <h3>O número secreto era ${numeroSecreto}</h3>
@@ -20,7 +35,8 @@ function verificaSeOChutePossuiValorValido(chute) {
         `
         recognition.addEventListener('end', () => recognition.stop());
         return
-    } else if (numero > numeroSecreto) {
+    } 
+   else if (numero > numeroSecreto) {
         elementoChute.innerHTML += `
         <div>O número secreto é menor <i class="fa-solid fa-down-long"></i></div>
         `
