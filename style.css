@@ -3,6 +3,7 @@
 :root {
     --font-family: 'Poppins', sans-serif;
     --bg-color: #176B87;
+    --bg-second-color: #000000;
     --primary-color: #DAFFFB;
     --second-color: #749BC2;
 }
@@ -58,4 +59,8 @@ h3 {
 .btn-jogar:hover {
     background: var(--second-color);
     transition: 0.5s;
+}
+
+.game-over {
+    background-color: var(--bg-second-color);
 }
